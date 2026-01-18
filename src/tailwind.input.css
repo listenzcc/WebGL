@@ -1,0 +1,157 @@
+/*
+Instead of a tailwind.config.js file, you can configure all of your customizations directly in the CSS file where you import Tailwind, giving you one less file to worry about in your project:
+<https://tailwindcss.com/blog/tailwindcss-v4#css-first-configuration>
+*/
+
+@import "tailwindcss";
+
+@theme {
+  /* 字体 tokens */
+  /* --font-display: "Satoshi", "sans-serif"; */
+  --font-heading: "Montserrat", ui-sans-serif, system-ui;
+  --font-body: "Roboto", ui-sans-serif, system-ui;
+
+  --breakpoint-3xl: 120rem;
+
+  --color-cc-red-100: #f9f4dc;
+  --color-cc-red-200: #ffd4d2;
+  --color-cc-red-300: #ffa8a7;
+  --color-cc-red-400: #eb7f7f;
+  --color-cc-red-500: #7c1823;
+
+  --color-cc-black-100: #faf7f9;
+  --color-cc-black-200: #c3c1c2;
+  --color-cc-black-300: #8f8c8e;
+  --color-cc-black-400: #5e5c5d;
+  --color-cc-black-500: #312f30;
+
+  --color-avocado-100: oklch(0.99 0 0);
+  --color-avocado-200: oklch(0.98 0.04 113.22);
+  --color-avocado-300: oklch(0.94 0.11 115.03);
+  --color-avocado-400: oklch(0.92 0.19 114.08);
+  --color-avocado-500: oklch(0.84 0.18 117.33);
+  --color-avocado-600: oklch(0.53 0.12 118.34);
+  --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+  --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@layer base {
+  body {
+    @apply font-body text-cc-black-500;
+  }
+
+  /* =========================
+     Typography Scale
+     ========================= */
+
+  h1 {
+    @apply font-heading font-bold text-3xl lg:text-5xl tracking-tight leading-tight mt-16 mb-8 pt-6 border-t border-slate-200;
+  }
+
+  h2 {
+    @apply font-heading text-2xl lg:text-4xl font-semibold tracking-tight leading-snug mt-8 mb-4;
+  }
+
+  h3 {
+    @apply font-heading text-xl lg:text-2xl font-semibold leading-snug mt-6 mb-3;
+  }
+
+  h4 {
+    @apply font-heading text-lg font-medium leading-snug mt-5 mb-2;
+  }
+
+  h5 {
+    @apply font-heading text-base font-medium uppercase tracking-wide mt-4 mb-2;
+  }
+
+  h6 {
+    @apply font-heading text-sm font-semibold tracking-wide text-slate-600 mt-4 mb-2;
+  }
+
+  /* =========================
+     Paragraph & Inline
+     ========================= */
+
+  p {
+    @apply text-base lg:text-xl leading-7 my-4;
+  }
+
+  span {
+    @apply leading-7;
+  }
+
+  strong {
+    @apply font-semibold;
+  }
+
+  em {
+    @apply italic;
+  }
+
+  /* =========================
+     Links
+     ========================= */
+
+  a {
+    @apply text-cc-red-400 underline underline-offset-4 decoration-cc-red-500 transition-colors italic;
+  }
+
+  a:hover {
+    @apply text-cc-red-500 decoration-cc-red-500;
+  }
+
+  /* =========================
+     Lists
+     ========================= */
+
+  ol {
+    @apply list-decimal pl-6 my-4 space-y-1;
+  }
+
+  ul {
+    @apply list-disc pl-6 my-4 space-y-1;
+  }
+
+  li {
+    @apply leading-7;
+  }
+
+  /* =========================
+     Code
+     ========================= */
+
+  pre {
+    @apply text-sm leading-6
+           bg-slate-900 text-slate-100
+           rounded-lg p-4 my-6
+           overflow-x-auto;
+  }
+
+  code {
+    @apply font-mono text-[0.95em];
+  }
+
+  p code,
+  li code {
+    @apply bg-slate-100 text-slate-800
+           rounded px-1 py-0.5;
+  }
+
+  /* =========================
+     Blockquote
+     ========================= */
+
+  blockquote {
+    @apply border-l-4 border-slate-300
+           pl-4 italic text-slate-600
+           my-6;
+  }
+
+  /* =========================
+     Horizontal Rule
+     ========================= */
+
+  hr {
+    @apply my-10 border-t border-slate-200;
+  }
+}
